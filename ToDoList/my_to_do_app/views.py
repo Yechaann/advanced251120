@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from .models import Todo
 import pdb
@@ -7,13 +7,13 @@ import pdb
 # Create your views here.
 def index(request):
     print("Oasis Don't look back in anger")
-    todos = Todo.onjects.all()
+    todos = Todo.objects.all()
     content  = {'todos': todos}
     #pdb.set_trace()
 
-    return render(request, 'my_to_do_app/index.html', content)
+    #return render(request, 'my_to_do_app/index.html', content)
 
-    #return render(request, 'my_to_do_app/index.html')
+    return render(request, 'my_to_do_app/index.html')
     #return HttpResponse("My first page")
 
 def createTodo(request):

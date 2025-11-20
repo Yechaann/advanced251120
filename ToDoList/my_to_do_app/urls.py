@@ -20,6 +20,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index), # 수업
+    path('', views.index,name='index'), # 수업
     path('createTodo/', views.createTodo, name = 'createTodo')
 ]
